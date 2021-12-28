@@ -1,0 +1,31 @@
+<div class="container" style="margin: 4rem">
+    <h1>Control 1</h1>
+    <div class="dataConfig" *ngFor="let data of dataTest">
+        <div class="input-group mb-3">
+            <div class="input-group mb-3" *ngIf="data.type === 'text'">
+                <span class="input-group-text" id="basic-addon1">{{ data.id }}</span>
+                <input type="text" class="form-control" aria-describedby="basic-addon1" [(ngModel)]="data.value">
+            </div>
+            <div class="input-group mb-3" *ngIf="data.type === 'radio'">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        {{ data.value }}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <h1>Control 2</h1>
+        <div class="row">
+
+            <div class="col-4 card" *ngFor="let item of dataTest">
+                <div>{{item.id}}</div>
+                <div>{{item.value}}</div>
+                <div>{{item.type}}</div>
+            </div>
+        </div>
+    </div>
+</div>
